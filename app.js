@@ -1,4 +1,6 @@
 const choices = ["Rock", "Paper", "Scissors"];
+let playerScore = 0;
+let computerScore = 0;
 
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3);
@@ -23,22 +25,28 @@ function playRound(playerSelection, computerSelection) {
         case "Rock":
             if (computerSelection === "Paper") {
                 console.log("You lose!")
+                computerScore++;
             } else {
                 console.log("You Win")
+                playerScore++;
             }
             break;
         case "Paper":
             if (computerSelection === "Scissors") {
                 console.log("You lose!")
+                computerScore++;
             } else {
                 console.log("You Win")
+                playerScore++;
             }
             break;
         case "Scissors":
             if (computerSelection === "Rock") {
                 console.log("You lose!")
+                computerScore++;
             } else {
                 console.log("You Win")
+                playerScore++;
             }
             break;
         default:
@@ -47,25 +55,9 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game(playRound) {
-    for (let i = 0; i < 5; i++) {
-        if (i === 1) {
-            return "You have 1 point";
-        } 
-        else if (i === 2) {
-            return "You have 2 points";
-        }
-        else if (i === 3) {
-            return "You have 3 points";
-        }
-        else if (i === 4) {
-            return "You have 4 points";
-        }
-        else {
-            return "You have 5 points";
-        }
+function game(playerScore, computerScore) {
+    if (playerScore || computerScore === 5) {
+        return "Game Over!"
     }
 }
-
-
-
+console.log(game())

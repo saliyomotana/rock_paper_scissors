@@ -55,9 +55,11 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game(playerScore, computerScore) {
+function isGameOver(playerScore, computerScore) {
+    console.log(isGameOver);
     if (playerScore || computerScore === 5) {
-        return "Game Over!"
+        return true
+    } else {
+        return false
     }
 }
-console.log(game())
